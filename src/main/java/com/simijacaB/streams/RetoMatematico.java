@@ -24,7 +24,7 @@ public class RetoMatematico {
                         new Calificacion("Historia", 9.0)
                 )),
                 new Estudiante("Pedro", Arrays.asList(
-                        new Calificacion("Matemáticas", 4.0), // Pedro necesita ayuda
+                        new Calificacion("Matemáticas", 4.0),
                         new Calificacion("Historia", 6.0)
                 ))
         );

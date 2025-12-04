@@ -37,7 +37,7 @@ public class AnalisisEmpleados {
 
         gananMas.forEach(System.out::println);
 
-        //Solo para imprimir no devuelve nada
+        //Solo para imprimir (no devuelve nada)
         empleados.stream()
                 .filter(e -> e.salario > 3000)
                 .filter(e -> e.departamento.equals("TI"))
@@ -52,7 +52,6 @@ public class AnalisisEmpleados {
         /*
         Reto 2: Estadísticas Financieras (Matemáticas)
         Calcula el promedio de salario (double) de todo el departamento de "Ventas".
-        (Pista: Recuerda la eficiencia, usa mapToDouble y busca un método que suene a promedio en inglés).
          */
         double promedio = empleados.stream()
                 .filter(e -> e.departamento.equals("Ventas"))
@@ -66,14 +65,13 @@ public class AnalisisEmpleados {
         Reto 3: El Buscador (Optional)
         Encuentra al primer empleado que gane más de 6000 dólares.
         Pregunta trampa: ¿Qué pasa si no hay ninguno? Tu código no debe fallar, debe devolver un mensaje "Nadie gana tanto" o un empleado por defecto.
-        (Pista: Operación terminal findFirst() y métodos de Optional).
          */
 
         Optional<Empleado> empleadoRico = empleados.stream()
                 .filter(e -> e.salario > 6000)
                 .findFirst();
 
-        if (!empleadoRico.isPresent()) {
+        if (empleadoRico.isEmpty()) {
             System.out.println("Nadie gana tanto");
         }
 
@@ -81,7 +79,6 @@ public class AnalisisEmpleados {
         Reto 4: El Reporte (Concatenación)
         Genera un solo String que contenga los nombres de todos los empleados separados por comas.
         Ejemplo esperado: "Carlos, Ana, Elena, Pedro, Luisa, Javier"
-        (Pista: Hay un Collector especial para unir textos).
          */
 
         String nombres = empleados.stream()
@@ -116,7 +113,7 @@ public class AnalisisEmpleados {
 
         gananMas.forEach(System.out::println);
 
-        //Solo para imprimir no devuelve nada
+        //Solo para imprimir,  no devuelve nada
         empleados.stream()
                 .filter(e -> e.salario > 3000)
                 .filter(e -> e.departamento.equals("TI"))
@@ -131,11 +128,11 @@ public class AnalisisEmpleados {
 
     static void SueldosPorDepartamento(List<Empleado> empleados){
 
-        Map<String, Double> sueldosPorDpto = empleados.stream()
+        Map<String, Double> sueldosPorDepto = empleados.stream()
                 .collect(Collectors.groupingBy(e -> e.departamento,
                         Collectors.summingDouble(e -> e.salario)));
 
-        System.out.println(sueldosPorDpto);
+        System.out.println(sueldosPorDepto);
 
     }
 }

@@ -3,8 +3,8 @@ package com.simijacaB.model;
 public class Serie {
 
     String titulo;
-    String genero; // "Drama", "Comedia", "Ciencia Ficción"
-    String plataforma; // "Netflix", "HBO", "Disney+"
+    String genero;
+    String plataforma;
     long visualizaciones;
 
     public Serie() {}
